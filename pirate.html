@@ -86,7 +86,7 @@
         </div>
     </div>
     <div>
-        <button onclick="bonusGame()">Bonus Game</button>
+        
     </div>
     <script>
         var ids = [ "loc0" ,"loc1" ,"loc2" ,"loc3" ,"loc4" ,
@@ -110,17 +110,17 @@
             var img = document.getElementById(id);
 
             if (position == treasureLocation) {
-                img.src = "gold-treasure.jpg";
+                img.src = "Gold Treasure.jpg";
                 gameOver = true;
                 penalty = penalty - 3;
             }
             else if (position == trapLocation) {
-                img.src = "trap.jpg";
+                img.src = "Trap.jpg";
                 gameOver = true;
                 penalty = penalty + 4;
             }
             else {
-                img.src = "weapons.jpg";
+                img.src = "Weapon.jpg";
             }
 
             checkCount++;
@@ -159,27 +159,7 @@
             id_penalty.innerHTML = `Penalty is ${penalty}`;
         }
         
-        function bonusGame(){
-            treasureLocation = Math.floor(Math.random() * 25);
-            trapLocation = Math.floor(Math.random() * 25);
-            for(let i=0; i<24; i++){
-                if(i === trapLocation){
-                    id = document.getElementById(ids[i]);
-                    id.src = "Trap.jpg";
-                }
-                else if(i === treasureLocation){
-                    id = document.getElementById(ids[i]);
-                    id.src = "Gold Treasure.jpg";
-                }
-                else{
-                    id = document.getElementById(ids[i]);
-                    id.src = "Treasure.jpg";
-                }
-
-            }
-        }
-        id_location.innerHTML = `Number of locations checked is  ${checkCount}`;
-        id_penalty.innerHTML = `Penalty is ${penalty}`;
+        
         </script>
 </body>
 </html>    
